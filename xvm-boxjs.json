@@ -1,0 +1,23 @@
+{
+  "id": "x-viral-monitor",
+  "name": "X Viral Monitor",
+  "desc": "X (Twitter) 推文流速与爆帖指数监控",
+  "author": "@Icy-Cat",
+  "homepage": "https://github.com/Icy-Cat/x-viral-monitor",
+  "items": [
+    {
+      "id": "xvm_config",
+      "name": "配置",
+      "desc": "trending: 趋势阈值(次/h), viral: 爆帖阈值(次/h), notify: 是否通知, lang: auto/zh/en/ja",
+      "val": "{\"trending\":1000,\"viral\":10000,\"notify\":true,\"lang\":\"auto\"}",
+      "type": "textarea"
+    },
+    {
+      "id": "xvm_store",
+      "name": "推文缓存",
+      "desc": "已捕获的推文数据（只读，自动写入）",
+      "val": "{}",
+      "type": "textarea"
+    }
+  ]
+}
