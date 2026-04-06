@@ -1,0 +1,17 @@
+#!name = X Viral Monitor
+#!desc = 在 X (Twitter) 推文上显示浏览速度与爆帖指数 🌱🚀🔥
+#!author = Icy-Cat (Loon 移植版)
+#!version = 1.2.0
+#!homepage = https://github.com/Icy-Cat/x-viral-monitor
+#!icon = https://abs.twimg.com/favicons/twitter.3.ico
+#!system = iOS
+
+[Script]
+# 拦截 X GraphQL API 响应，提取推文数据缓存至持久化存储
+http-response https:\/\/x\.com\/i\/api\/graphql\/.+ script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-api.js, requires-body=true, timeout=10, tag=XVM_API
+http-response https:\/\/api\.x\.com\/graphql\/.+ script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-api.js, requires-body=true, timeout=10, tag=XVM_API_v2
+http-response https:\/\/twitter\.com\/i\/api\/graphql\/.+ script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-api.js, requires-body=true, timeout=10, tag=XVM_API_twitter
+http-response https:\/\/api\.twitter\.com\/graphql\/.+ script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-api.js, requires-body=true, timeout=10, tag=XVM_API_twitter_v2
+
+[MITM]
+hostname = x.com, api.x.com, twitter.com, api.twitter.com
