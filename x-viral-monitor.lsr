@@ -1,15 +1,16 @@
 #!name = X Viral Monitor
-#!desc = 在 X (Twitter) 推文上显示浏览速度与爆帖指数 🌱🚀🔥
+#!desc = 在 X (Twitter) 推文上���示浏览速度与爆帖指数 🌱🚀🔥
 #!author = Icy-Cat (Loon 移植版)
-#!version = 1.5.0
+#!version = 1.5.2
 #!homepage = https://github.com/Icy-Cat/x-viral-monitor
 #!icon = https://abs.twimg.com/favicons/twitter.3.ico
 #!system = iOS
 
 [Script]
-# 向 x.com 页面 HTML 注入 content script
-http-response https://x.com/* script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-inject.js, requires-body=true, timeout=10, tag=XVM_INJECT
+http-response https://x.com/* tag=XVM_INJECT
 
+[http-body]
+script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-inject.js,tag=XVM_INJECT
 
 [MITM]
 hostname = x.com
