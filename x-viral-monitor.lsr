@@ -8,8 +8,8 @@
 
 [Script]
 # 向 x.com 页面 HTML 注入 content script
-http-response https://x.com/ script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-inject.js, requires-body=true, timeout=10, tag=XVM_INJECT
-http-response https://x.com/home script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-inject.js, requires-body=true, timeout=10, tag=XVM_INJECT_HOME
+http-response https://x.com/* script-path=https://raw.githubusercontent.com/fckcg/loon-scripts/refs/heads/main/xvm-inject.js, requires-body=true, timeout=10, tag=XVM_INJECT
+
 
 [MITM]
 hostname = x.com
